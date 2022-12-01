@@ -1,0 +1,35 @@
+ edunit = findViewById(R.id.edunit);
+        tvdisplay5 = findViewById(R.id.tvdisplay5);
+        total4 = findViewById(R.id.total4);
+
+        String unit = edunit.getText().toString();
+        
+
+        total4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int unitt = Integer.parseInt(unit);
+                if (unitt>0 && unitt<=50 ){
+                    totall = unitt*0.50;
+                    last = totall%20;
+                    tvdisplay5.setText("মোট কারেন্ট বিল =" +last);
+
+                }
+                else if(unitt>50 && unitt<=100){
+                    totall = unitt*0.75;
+                    last = totall%20;
+                    tvdisplay5.setText(""+last);
+                }
+                else if(unitt>100 && unitt<=250){
+                    totall = unitt*0.75;
+                    last = totall%20;
+                    tvdisplay5.setText("মোট কারেন্ট বিল = " +last);
+                }else {
+                    totall = unitt*1.50;
+                    last = totall%20;
+                    tvdisplay5.setText("মোট কারেন্ট বিল =" +last);
+                }
+
+            }
+        });
+
